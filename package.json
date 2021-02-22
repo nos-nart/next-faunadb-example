@@ -1,0 +1,19 @@
+{
+  "name": "nos-next-faunadb-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nos-nart/nos-next-faunadb-example.git",
+  "author": "nam hoang <nam.hoang@ntq-solution.com.vn>",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.0.0"
+  },
+  "scripts": {
+    "install:server": "cd server && yarn",
+    "install:client": "cd client && yarn",
+    "install": "concurrently \"yarn install:server\" \"yarn install:client\"",
+    "server": "cd server && yarn start",
+    "client": "cd client && yarn start",
+    "dev": "concurrently \"yarn server\" \"yarn client\""
+  }
+}
