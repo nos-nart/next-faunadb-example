@@ -23,12 +23,14 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         todoList: action.payload.data,
         fetching: false,
+        message: 'Fetch successfully!'
       }
     }
     case t.FETCH_TODO_FAILED: {
       return {
         ...state,
         fetching: false,
+        message: 'Something went wrong!'
       }
     }
     default: {

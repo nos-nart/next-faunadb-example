@@ -4,7 +4,6 @@ import * as t from "../types";
 function* fetchTodo() {
   try {
     const response = yield fetch('http://localhost:4000/todos');
-    console.log('response: ', response);
     const todoList = yield response.json();
 
     yield put({

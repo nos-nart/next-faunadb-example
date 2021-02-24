@@ -81,7 +81,7 @@ const editTodo = async function(updateData, ref) {
     q.Update(q.Ref(q.Collection('todos'), ref), { data: updatedTodo })
   );
   return {
-    message: 'Todo was edited succesfully',
+    message: 'Todo was edited successfully',
     status: 200,
     data: formatTodos(result)
   }

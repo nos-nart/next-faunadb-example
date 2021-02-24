@@ -1,10 +1,15 @@
 import React from 'react'
-import { Box } from '@chakra-ui/react';
+import { Box, VStack } from '@chakra-ui/react';
 
 export const TodoList = ({todos}) => {
   return (
-    <Box my={6}>
+    <VStack
+      divider={<StackDivider borderColor="gray.200" />}
+      spacing={2}
+      align="stretch"
+    >
+      {}
       {JSON.stringify(todos, null, 2)}
-    </Box>
+    </VStack>
   )
 }
