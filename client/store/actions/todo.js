@@ -5,3 +5,10 @@ export const fetchTodo = () => {
     type: t.FETCH_TODO_REQUESTED
   }
 }
+
+export const addTodo = (newTodo) => {
+  return {
+    type: t.ADD_TODO_REQUESTED,
+    payload: newTodo
+  }
+}

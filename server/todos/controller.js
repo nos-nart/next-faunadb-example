@@ -26,6 +26,7 @@ const listTodo = async function() {
 }
 
 const createTodo = async function(newTodo) {
+  console.log('newTodo: ', newTodo);
   const todo = { title: newTodo, id: nanoid(), status: false };
   const todoValidation = validateTodo(todo);
 

@@ -4,7 +4,7 @@ import * as t from '../types';
 const initialState = {
   todoList: [],
   message: '',
-  fetching: false,
+  fetching: true,
 }
 
 const todoReducer = (state = initialState, action) => {
@@ -12,18 +12,12 @@ const todoReducer = (state = initialState, action) => {
     case HYDRATE: {
       return { ...state, ...action.payload };
     }
-    case t.FETCH_TODO_REQUESTED: {
-      return {
-        ...state,
-        fetching: true,
-      }
-    }
     case t.FETCH_TODO_SUCCEEDED: {
       return {
         ...state,
         todoList: action.payload.data,
         fetching: false,
-        message: 'Fetch successfully!'
+        message: action.payload.message
       }
     }
     case t.FETCH_TODO_FAILED: {
@@ -31,6 +25,14 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         fetching: false,
         message: 'Something went wrong!'
+      }
+    }
+    case t.ADD_TODO_SUCCEEDED: {
+      console.log('action.payload: ', action.payload);
+      return {
+        ...state,
+        todoList: [...state.todoList, action.payload.data],
+        message: action.payload.message
       }
     }
     default: {
