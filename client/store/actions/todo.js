@@ -12,3 +12,10 @@ export const addTodo = (newTodo) => {
     payload: newTodo
   }
 }
+
+export const editTodo = (editData, ref) => {
+  return {
+    type: t.EDIT_TODO_REQUESTED,
+    payload: { editData, ref }
+  }
+}

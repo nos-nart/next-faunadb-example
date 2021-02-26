@@ -6,6 +6,7 @@ const formatTodos = function(query) {
     title: query.data.title,
     status: query.data.status,
     id: query.data.id,
+    ref: query.ref.id
   };
 }
 
@@ -26,7 +27,6 @@ const listTodo = async function() {
 }
 
 const createTodo = async function(newTodo) {
-  console.log('newTodo: ', newTodo);
   const todo = { title: newTodo, id: nanoid(), status: false };
   const todoValidation = validateTodo(todo);
 

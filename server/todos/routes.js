@@ -19,7 +19,7 @@ router.post('/new', async (request, response) => {
 });
 
 router.patch('/edit/:id', async (request, response) => {
-  const updateTodo = request.body;
+  const { updateTodo } = request.body;
   const ref = request.params.id;
 
   const updateResult = await controller.editTodo(updateTodo, ref);

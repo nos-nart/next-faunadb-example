@@ -7,7 +7,7 @@ import { addTodo } from '@/store/index';
 export const TodoHeader = () => {
   const inputRef = React.useRef(null);
   const state = useSelector((state) => state.todo);
-	const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const onSubmit = (e) => {
     e.preventDefault();

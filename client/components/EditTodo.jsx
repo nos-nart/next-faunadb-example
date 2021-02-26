@@ -13,16 +13,20 @@ import {
   useDisclosure,
   ModalFooter
 } from '@chakra-ui/react';
+import { useDispatch, useSelector } from "react-redux";
+
 import { EditIcon } from './svgs/EditIcon';
 import { SaveIcon } from './svgs/SaveIcon';
+import { editTodo } from '@/store/index';
 
-export const EditTodo = ({ prevTitle }) => {
+export const EditTodo = ({ prevTitle, idRef }) => {
   const inputRef = React.useRef(null);
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch();
 
   const onEdit = (e) => {
     e.preventDefault();
-    console.log('editing ~> ', inputRef.current.value);
+    dispatch(editTodo({ title: inputRef.current.value }, idRef));
   }
 
   return (

@@ -19,7 +19,7 @@ export const TodoList = ({todos}) => {
             <Box d="flex" alignItems="center">
               <Checkbox mr={3} colorScheme="green" isChecked={todo.status}/>
               <Button size="sm" colorScheme="pink" variant="ghost"><TrashIcon width={15} /></Button>
-              <EditTodo prevTitle={todo.title} />
+              <EditTodo idRef={todo.ref} prevTitle={todo.title} />
             </Box>
           </Flex>
         )) : (

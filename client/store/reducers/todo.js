@@ -28,10 +28,17 @@ const todoReducer = (state = initialState, action) => {
       }
     }
     case t.ADD_TODO_SUCCEEDED: {
-      console.log('action.payload: ', action.payload);
       return {
         ...state,
         todoList: [...state.todoList, action.payload.data],
+        message: action.payload.message
+      }
+    }
+    case t.EDIT_TODO_SUCCEEDED: {
+      const editedTodoList = state.todoList.map(todo => (todo.ref === action.payload.data.ref) ? action.payload.data : todo);
+      return {
+        ...state,
+        todoList: [...editedTodoList],
         message: action.payload.message
       }
     }
